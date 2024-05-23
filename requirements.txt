@@ -1,0 +1,10 @@
+llamaapi
+streamlit_chat
+langchain
+python-dotenv
+streamlit
+pypdf
+langchain_experimental
+sentence-transformers
+chromadb
+langchain_openai
