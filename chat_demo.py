@@ -89,8 +89,8 @@ def rag_query(vectorstore, user_question):
     return chat_completion.choices[0].message.content
 
 # Streamlit app setup
-st.set_page_config(page_title="Chatbot tuyển sinh IUH", layout="wide")
-st.title("Chatbot tuyển sinh IUH")
+st.set_page_config(page_title="Chatbot tuyển sinh IUH 🏫", layout="wide")
+st.title("Chatbot tuyển sinh IUH 🏫")
 
 # Cache function
 @st.cache_data
@@ -121,7 +121,7 @@ if uploaded_file is not None:
 # Chat interface
 if "source_id" in st.session_state:
     if "messages" not in st.session_state:
-        st.session_state.messages = [{"role": "assistant", "content": "Tôi có thể giúp gì cho bạn?"}]
+        st.session_state.messages = [{"role": "assistant", "content": " Xin chào, tôi có thể tư vấn gì cho bạn?"}]
 
     # Display chat messages
     for message in st.session_state.messages:
@@ -137,7 +137,7 @@ if "source_id" in st.session_state:
         # Generate a new response if last message is not from assistant
         if st.session_state.messages[-1]["role"] != "assistant":
             with st.chat_message("assistant"):
-                with st.spinner("Thinking..."):
+                with st.spinner("Tôi đang suy nghĩ 💭..."):
                     response = _pseudo_query_pdf(st.session_state.source_id, prompt)
                     st.write(response)
             message = {"role": "assistant", "content": response}
